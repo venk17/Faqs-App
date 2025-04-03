@@ -4,13 +4,15 @@ import './index.css'
 
 const Faqs = ({faqsList}) => {
   return (
-    <div className="faqs-container">
-      <h1 className="faqs-title">FAQs</h1>
-      <ul className="faqs-list">
-        {faqsList.map(faq => (
-          <FaqItem key={faq.id} faq={faq} />
-        ))}
-      </ul>
+    <div className="faqs-app-container">
+      <div className="faqs-container">
+        <h1 className="main-heading">FAQs</h1>
+        <ul className="faqs-list">
+          {faqsList.map(faq => (
+            <FaqItem key={faq.id} faq={faq} />
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
