@@ -11,19 +11,26 @@ const FaqItem = ({faq}) => {
 
   return (
     <li className="faq-item">
-      <div className="faq-question" onClick={toggleFaq}>
-        <h2 className="question-text">{questionText}</h2>
-        <img
-          src={
-            isOpen
-              ? 'https://assets.ccbp.in/frontend/react-js/faqs-minus-icon-img.png'
-              : 'https://assets.ccbp.in/frontend/react-js/faqs-plus-icon-img.png'
-          }
-          alt={isOpen ? 'minus' : 'plus'}
-          className="icon"
-        />
+      <div className="question-container">
+        <h1 className="question">{questionText}</h1>
+        <button type="button" className="button" onClick={toggleFaq}>
+          <img
+            src={
+              isOpen
+                ? 'https://assets.ccbp.in/frontend/react-js/faqs-minus-icon-img.png'
+                : 'https://assets.ccbp.in/frontend/react-js/faqs-plus-icon-img.png'
+            }
+            alt={isOpen ? 'minus' : 'plus'}
+            className="icon"
+          />
+        </button>
       </div>
-      {isOpen && <p className="faq-answer">{answerText}</p>}
+      {isOpen && (
+        <div className="answer-container">
+          <hr className="horizontal-line" />
+          <p className="answer">{answerText}</p>
+        </div>
+      )}
     </li>
   )
 }
